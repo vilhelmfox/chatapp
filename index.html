@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple ChatApp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">ChatApp</p>
+          <h1>Stay connected with your team</h1>
+          <p class="app__subtitle">
+            A lightweight chat interface that keeps the conversation focused.
+          </p>
+        </div>
+        <button class="app__cta" type="button">New chat</button>
+      </header>
+
+      <section class="chat">
+        <aside class="chat__sidebar">
+          <div class="sidebar__search">
+            <input type="text" placeholder="Search conversations" />
+          </div>
+          <ul class="sidebar__list">
+            <li class="sidebar__item sidebar__item--active">
+              <div>
+                <h3>Design Sync</h3>
+                <p>Need feedback on the new layout.</p>
+              </div>
+              <span>2m</span>
+            </li>
+            <li class="sidebar__item">
+              <div>
+                <h3>Product Planning</h3>
+                <p>Agenda for Thursday sprint.</p>
+              </div>
+              <span>1h</span>
+            </li>
+            <li class="sidebar__item">
+              <div>
+                <h3>Support</h3>
+                <p>Investigating a login issue.</p>
+              </div>
+              <span>1d</span>
+            </li>
+          </ul>
+        </aside>
+
+        <section class="chat__panel">
+          <div class="chat__messages" id="chatMessages">
+            <div class="message message--incoming">
+              <div class="message__meta">Alex · 10:32</div>
+              <p>Morning! Did you get the latest mockups?</p>
+            </div>
+            <div class="message message--outgoing">
+              <div class="message__meta">You · 10:33</div>
+              <p>Yes! I love the new spacing. I'll share notes soon.</p>
+            </div>
+            <div class="message message--incoming">
+              <div class="message__meta">Alex · 10:35</div>
+              <p>Great. Let's review the hero section together.</p>
+            </div>
+          </div>
+          <form class="chat__composer" id="chatForm">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type a message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
