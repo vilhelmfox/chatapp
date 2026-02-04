@@ -68,6 +68,18 @@ const createMessage = ({ name, text, timestamp, variant }) => {
   meta.textContent =
     variant === "system" ? "System" : `${name} · ${formatTimestamp(timestamp)}`;
 
+const createMessage = (text) => {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("message", "message--outgoing");
+
+  const meta = document.createElement("div");
+  meta.classList.add("message__meta");
+  const timestamp = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  meta.textContent = `You · ${timestamp}`;
+
   const body = document.createElement("p");
   body.textContent = text;
 
@@ -151,5 +163,15 @@ chatForm.addEventListener("submit", (event) => {
       name,
     })
   );
+chatForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const value = chatInput.value.trim();
+  if (!value) {
+    return;
+  }
+
+  const message = createMessage(value);
+  chatMessages.appendChild(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
   chatInput.value = "";
 });
