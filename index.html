@@ -13,6 +13,17 @@
           <p class="app__eyebrow">ChatApp</p>
           <h1>Stay connected with your team</h1>
           <p class="app__subtitle">
+            Share the room link with a friend to chat in real time.
+          </p>
+          <div class="app__room" aria-live="polite">
+            <span class="status" id="connectionStatus">Connecting...</span>
+            <span class="app__room-label">Room:</span>
+            <span class="app__room-code" id="roomCode">lobby</span>
+          </div>
+        </div>
+        <button class="app__cta" id="shareLink" type="button">
+          Copy room link
+        </button>
             A lightweight chat interface that keeps the conversation focused.
           </p>
         </div>
@@ -50,6 +61,23 @@
         </aside>
 
         <section class="chat__panel">
+          <div class="chat__toolbar">
+            <label class="toolbar__label" for="displayName">
+              Display name
+            </label>
+            <input
+              type="text"
+              id="displayName"
+              placeholder="Your name"
+              autocomplete="name"
+            />
+          </div>
+          <div class="chat__messages" id="chatMessages" aria-live="polite">
+            <div class="message message--system">
+              <div class="message__meta">System</div>
+              <p>
+                Share the room link with a friend so you can chat together.
+              </p>
           <div class="chat__messages" id="chatMessages">
             <div class="message message--incoming">
               <div class="message__meta">Alex · 10:32</div>
